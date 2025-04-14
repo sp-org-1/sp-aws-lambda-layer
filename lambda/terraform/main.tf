@@ -40,7 +40,7 @@ resource "aws_iam_role_policy" "lambda" {
 data "archive_file" "lambda_layer_archive" {
   type        = "zip"
   source_dir = "../layer"
-  excludes = ["Scripts", "bin", "Include", "Lib"]
+  excludes = ["Scripts", "bin", "Include", "Lib", "*.cfg"]
   output_path = "lambda-layer.zip"
 }
 
