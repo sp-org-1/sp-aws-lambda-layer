@@ -36,7 +36,7 @@ resource "aws_iam_role_policy" "lambda" {
   })
 }
 
-# Archieve Lambda Layer
+# Archive Lambda Layer
 data "archive_file" "lambda_layer_archive" {
   type        = "zip"
   source_dir = "../layer"
@@ -44,7 +44,7 @@ data "archive_file" "lambda_layer_archive" {
   output_path = "lambda-layer.zip"
 }
 
-# Archieve Lambda Function
+# Archive Lambda Function
 data "archive_file" "lambda_function_archive" {
   type        = "zip"
   source_dir = "../src"
