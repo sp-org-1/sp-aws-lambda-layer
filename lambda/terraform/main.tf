@@ -79,12 +79,15 @@ resource "aws_lambda_layer_version" "lambda_layer" {
 
 # Lambda Function
 resource "aws_lambda_function" "lambda_function" {
-  filename         = data.archive_file.lambda_function_archive.output_path
+  #filename         = data.archive_file.lambda_function_archive.output_path
   function_name    = var.lambda_function_name
   role             = aws_iam_role.lambda_role.arn
-  handler          = "lambda_function.lambda_handler"
+  #handler          = "lambda_function.lambda_handler"
   memory_size      = 128
-  source_code_hash = data.archive_file.lambda_function_archive.output_base64sha256
+  #source_code_hash = data.archive_file.lambda_function_archive.output_base64sha256
   runtime          = "python3.13"
-  layers           = [aws_lambda_layer_version.lambda_layer.arn]
+  #layers           = [aws_lambda_layer_version.lambda_layer.arn]
+  #package_type = "Zip"
+  package_type = "Image"
+  image_uri    = "291912718832.dkr.ecr.us-east-1.amazonaws.com/docker-image:test"
 }
