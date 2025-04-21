@@ -33,7 +33,7 @@ terraform apply -auto-approve
 ## Lambda using Docker
 ### Create Docker image and push to ECR
 ```
-cd <repo-root>/lambda
+cd <repo-root>/lambda/terraform/lambda-docker
 docker build --platform linux/amd64 -t lambda-docker-image:1.0 .
 docker tag lambda-docker-image:1.0 291912718832.dkr.ecr.us-east-1.amazonaws.com/lambda-docker-image:1.0
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 291912718832.dkr.ecr.us-east-1.amazonaws.com

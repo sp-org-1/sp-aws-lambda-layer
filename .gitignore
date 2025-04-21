@@ -1,4 +1,4 @@
 lambda/terraform/**/.terraform*
 lambda/terraform/terraform.tfstate*
-lambda/layer
+lambda/terraform/layer-lambda-zip/layer
 lambda/terraform/*.zip
